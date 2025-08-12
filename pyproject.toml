@@ -1,0 +1,41 @@
+[project]
+name = "brag-book"
+version = "0.1.0"
+description = "EORA AI brag book"
+authors = [
+    {name = "dmvaled",email = "dmvaled@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.2"
+pre-commit = "^4.0.1"
+mypy = "^1.17.1"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.4.1"
+pytest-cov = "^6.2.1"
+pytest-asyncio = "^1.1.0"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+fix = true
+unsafe-fixes = true
+
+[tool.ruff.lint]
+extend-select = ["E", "F", "W", "I", "B", "Q"]
+
+[tool.ruff.lint.isort]
+force-single-line = true
+combine-as-imports = false
+force-sort-within-sections = true
+lines-after-imports = 2
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
